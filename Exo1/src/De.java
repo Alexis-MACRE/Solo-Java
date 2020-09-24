@@ -4,8 +4,11 @@ public class De {
 
      //-------------------    ATTRIBUTS    -------------------//
 
+     private static final int NB_FACES_MIN = 3;
+     private static final int NB_FACES_MAX = 120;
+
      protected static Random r = new Random();
-     protected static int nb_des=0;
+     private static int nb_des=0;
 
      protected int nbFaces;
      protected final String nom;
@@ -22,13 +25,13 @@ public class De {
      public De(int nbFaces, String nom){
           nb_des++;
 
-          if(nbFaces>=3 && nbFaces <= 120 && nom!=""){
+          if(nbFaces>=NB_FACES_MIN && nbFaces<=NB_FACES_MAX && nom!=""){
                this.nbFaces = nbFaces;
                this.nom = new String(nom);
           }
            else{
                this.nom = new String("ERROR");
-               System.err.println();
+               System.err.println("Valeurs entrées incorrectes");
           }
      }
 
@@ -43,7 +46,7 @@ public class De {
              this.nbFaces = nbFaces;
           }
          else{
-             System.err.println();
+             System.err.println(("Valeurs entrées incorrectes"));
           }
  
      }
