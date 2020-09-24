@@ -13,7 +13,7 @@ public class De {
      private static int nb_des=0;
 
      protected int nbFaces;
-     protected final String nom;
+     public final String nom;
 
      //-----------------   CONSTRUCTEUR(S)   -----------------//
      
@@ -51,10 +51,6 @@ public class De {
              System.err.println(("Valeurs entrées incorrectes"));
           }
  
-     }
-
-     public String getNom(){
-          return this.nom;
      }
 
      //--------------------    METHODES    --------------------//
