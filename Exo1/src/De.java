@@ -7,6 +7,8 @@ public class De {
      private static final int NB_FACES_MIN = 3;
      private static final int NB_FACES_MAX = 120;
 
+     private static final int NB_FACES_DEFAUT = 0;
+
      protected static Random r = new Random();
      private static int nb_des=0;
 
@@ -18,7 +20,7 @@ public class De {
      public De(){
           nb_des++;
 
-          this.nbFaces = 6;
+          this.nbFaces = NB_FACES_DEFAUT;
           this.nom = new String("Dé n° "+nb_des);
      }
 
