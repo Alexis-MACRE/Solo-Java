@@ -7,7 +7,7 @@ public class De {
      private static final int NB_FACES_MIN = 3;
      private static final int NB_FACES_MAX = 120;
 
-     private static final int NB_FACES_DEFAUT = 0;
+     private static final int NB_FACES_DEFAUT = 6;
 
      protected static Random r = new Random();
      private static int nb_des=0;
@@ -17,24 +17,35 @@ public class De {
 
      //-----------------   CONSTRUCTEUR(S)   -----------------//
      
-     public De(){
-          nb_des++;
-
-          this.nbFaces = NB_FACES_DEFAUT;
-          this.nom = new String("Dé n° "+nb_des);
-     }
-
      public De(int nbFaces, String nom){
           nb_des++;
 
-          if(nbFaces>=NB_FACES_MIN && nbFaces<=NB_FACES_MAX && nom!=""){
+          if(nbFaces>=NB_FACES_MIN && nbFaces<=NB_FACES_MAX){
                this.nbFaces = nbFaces;
-               this.nom = new String(nom);
           }
-           else{
-               this.nom = new String("ERROR");
+          else{
                System.err.println("Valeurs entrées incorrectes");
           }
+
+          if(nom=="")
+          {
+               this.nom = new String("Dé n° "+nb_des);
+          }
+           else{               
+               this.nom = new String(nom);
+          }
+     }
+
+     public De(){
+          this(NB_FACES_DEFAUT,"");      
+     }
+
+     public De(int nbFaces){
+          this(nbFaces,"");
+     }
+
+     public De(String nom){
+          this(NB_FACES_DEFAUT,nom);
      }
 
      //------------------ GETTERS / SETTERS ------------------//
@@ -60,7 +71,7 @@ public class De {
      }
 
      public Boolean equals(De deCompare){
-          String nomCompare = deCompare.getNom();
+          String nomCompare = deCompare.nom;
           int nbFacesCompare = deCompare.getNbFaces();
           
           if(nomCompare.equals(this.nom) && nbFacesCompare == this.nbFaces){
@@ -84,7 +95,7 @@ public class De {
           int resultatDe;
 
           for(int i=0; i<nbLances ; i++){
-               resultatDe = lancer();
+               resultatDe = r.nextInt(this.nbFaces)+1;
 
                if(resultatDe > resultatPrecedent){
                     resultatMax = resultatDe;

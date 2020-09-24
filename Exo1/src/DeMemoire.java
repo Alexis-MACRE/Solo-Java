@@ -13,11 +13,12 @@ public class DeMemoire extends De {
      //--------------------    METHODES    --------------------//
 
      public int lancer(){
-          int resultatDe = r.nextInt(nbFaces)+1;
+          int resultatDe;
 
-          while(resultatDe==this.resultatPrecedent){
-               resultatDe = r.nextInt(nbFaces)+1;
-          }
+          do{
+               resultatDe = super.lancer();
+          } 
+          while(resultatDe==this.resultatPrecedent);
 
           this.resultatPrecedent = resultatDe;
 

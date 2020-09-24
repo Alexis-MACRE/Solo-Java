@@ -16,12 +16,13 @@ public class DePipe extends De {
 
      public int lancer(){
 
-          int resultatDe=1;
+          int resultatDe;
 
-          while(resultatDe<=borneMin){
-               resultatDe = r.nextInt(this.nbFaces)+1;
+          do{
+               resultatDe = super.lancer();
           }
-     
+          while(resultatDe<=borneMin);
+
           return resultatDe;
      }
 

@@ -20,13 +20,13 @@ public class TestDe {
 
           //TEST NOM ET LANCER DÉ NORMAL//
           System.out.println("TEST NOM ET LANCER DÉ NORMAL");
-          System.out.println("Nom du dé : "+de6Faces.getNom());
+          System.out.println("Nom du dé : "+de6Faces.nom);
           System.out.println(de6Faces.lancer(10));
           System.out.println("--------------------");
 
           //TEST NOM ET LANCER DÉ PIPÉ//
           System.out.println("TEST NOM ET LANCER DÉ PIPÉ");
-          System.out.println("Nom du dé : "+de7Pipe.getNom());
+          System.out.println("Nom du dé : "+de7Pipe.nom);
           System.out.print(" | ");
           for(int i = 0 ; i < 40 ; i++){
                System.out.print(de7Pipe.lancer()+" | ");
@@ -36,7 +36,7 @@ public class TestDe {
 
           //TEST LANCER DÉ MÉMOIRE//
           System.out.println("TEST NOM ET LANCER DÉ MÉMOIRE");
-          System.out.println("Nom du dé : "+deMem.getNom());
+          System.out.println("Nom du dé : "+deMem.nom);
           System.out.println("Un seul résultat: "+deMem.lancer(20));
           System.out.println("\nPlusieurs lancés:");
           System.out.print(" | ");
@@ -47,7 +47,7 @@ public class TestDe {
 
           //TEST LANCER DÉ AUTRE//
           System.out.println("TEST NOM ET LANCER DÉ AUTRE");
-          System.out.println("Nom du dé : "+deBizarre.getNom());
+          System.out.println("Nom du dé : "+deBizarre.nom);
           System.out.print("| ");
           for(int i = 0 ; i < 10 ; i++){
                System.out.print(deBizarre.lancer_special()+" | ");
