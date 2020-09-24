@@ -4,6 +4,12 @@ public class DeMemoire extends De {
 
      private int resultatPrecedent = 0;
 
+     //-----------------   CONSTRUCTEUR(S)   ------------------//
+
+     public DeMemoire(int nbFaces, String nom){
+          super(nbFaces, nom);
+     }
+
      //--------------------    METHODES    --------------------//
 
      public int lancer(){

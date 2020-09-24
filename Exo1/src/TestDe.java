@@ -5,9 +5,9 @@ public class TestDe {
           De deCompare1 = new De(6,"comp");
           De deCompare2 = new De(6,"comp");
 
-          DePipe de7Pipe = new DePipe(7,"de7Pipe.titre",5);
+          DePipe de7Pipe = new DePipe(7,"titre dé pipé",5);
 
-          DeMemoire deMem = new DeMemoire();
+          DeMemoire deMem = new DeMemoire(8,"titre dé mémoire");
 
           Object faces[] = new Object[]{2.7,"Salade",98,true,de7Pipe,'c'};
           DeAutre deBizarre = new DeAutre(6,"bizarre",faces);
@@ -29,13 +29,14 @@ public class TestDe {
           System.out.println("Nom du dé : "+de7Pipe.getNom());
           System.out.print(" | ");
           for(int i = 0 ; i < 40 ; i++){
-               System.out.print(de7Pipe.lancer()+" ");
+               System.out.print(de7Pipe.lancer()+" | ");
           }
-          System.out.println(de7Pipe.lancer(3));
+          System.out.println("Un seul résultat: "+de7Pipe.lancer(3));
           System.out.println("--------------------");
 
           //TEST LANCER DÉ MÉMOIRE//
           System.out.println("TEST NOM ET LANCER DÉ MÉMOIRE");
+          System.out.println("Nom du dé : "+deMem.getNom());
           System.out.println("Un seul résultat: "+deMem.lancer(20));
           System.out.println("\nPlusieurs lancés:");
           System.out.print(" | ");
