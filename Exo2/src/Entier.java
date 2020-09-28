@@ -9,9 +9,7 @@ public class Entier {
      //-----------------   CONSTRUCTEUR(S)   -----------------//
 
      public Entier(int borneInf,int borneSup){
-          this.borneInf = borneInf;
-          this.borneSup = borneSup;
-          valeur = 0;
+          this(borneInf,borneSup,borneInf+1);
      } 
 
      public Entier(int borneInf,int borneSup,int valeur){
