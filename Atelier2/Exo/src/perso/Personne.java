@@ -44,7 +44,7 @@ public class Personne{
 		this(leNom, lePrenom, new GregorianCalendar(a,m,j),new Adresse(numero,rue,code_postal,ville));
 	}
 
-		/**
+	/**
 	 * Constructeur de Personne
 	 * @param personne l'objet personne dont on fait la copie
 	 */

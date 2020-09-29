@@ -3,17 +3,24 @@ import java.util.*;
 
 public class Employe extends Personne {
 
-     private GregorianCalendar dateEmbauche2;
-     private float salaire;
+     protected GregorianCalendar dateEmbauche;
+     protected float salaire;
 
-     private Employe(Personne personne, GregorianCalendar dateEmbauche, int salaire){
+     protected Employe(Personne personne, GregorianCalendar dateEmbauche, float salaire){
           super(personne);
 
-          this.dateEmbauche2 = dateEmbauche;
+          this.dateEmbauche = dateEmbauche;
           this.salaire = salaire;
      }
+
+     protected Employe(Employe employe){
+          super(employe.getPrenom(), employe.getNom(), employe.getDateNaissance(), employe.getAdresse());
+
+          this.dateEmbauche = (GregorianCalendar) employe.getDateEmbauche().clone();
+          this.salaire = employe.getSalaire();
+     }
      
-     public static Employe createEmploye(String leNom,String lePrenom, int j, int m, int a, int numero, String rue, String code_postal, String ville, GregorianCalendar dateEmbauche, int salaire){
+     public static Employe createEmploye(String leNom,String lePrenom, int j, int m, int a, int numero, String rue, String code_postal, String ville, GregorianCalendar dateEmbauche, float salaire){
           
           Employe retour = null;          
 
@@ -29,6 +36,18 @@ public class Employe extends Personne {
 
      }
 
+     public String toString(){
+          return super.toString()+"\nSalaire : " + this.salaire + "€";
+     }
+
+     public GregorianCalendar getDateEmbauche(){
+          return this.dateEmbauche;
+     }
+
+     public float getSalaire(){
+          return this.salaire;
+     }
+
      public void augmenterLeSalaire(float pourcentage){
           this.salaire *= pourcentage;
      }
@@ -36,7 +55,7 @@ public class Employe extends Personne {
      public int calculAnnuite(){
           GregorianCalendar now = new GregorianCalendar();
 
-          return now.get(GregorianCalendar.YEAR) - this.dateEmbauche2.get(GregorianCalendar.YEAR);
+          return now.get(GregorianCalendar.YEAR) - this.dateEmbauche.get(GregorianCalendar.YEAR);
      }
      
 }
