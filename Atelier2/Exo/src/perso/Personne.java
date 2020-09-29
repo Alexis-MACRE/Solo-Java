@@ -49,11 +49,7 @@ public class Personne{
 	 * @param personne l'objet personne dont on fait la copie
 	 */
 	public Personne(Personne personne){
-		this.nom = personne.getNom();
-		this.prenom= personne.getPrenom();
-		this.dateNaissance = personne.getDateNaissance();
-		this.adresse = personne.getAdresse();
-		nbPersonne++;
+		this(personne.getNom(), personne.getPrenom(), personne.getDateNaissance(), personne.getAdresse());
 	}
 
 	/**

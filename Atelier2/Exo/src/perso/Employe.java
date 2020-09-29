@@ -33,7 +33,6 @@ public class Employe extends Personne {
           }
 
           return retour;
-
      }
 
      public String toString(){
