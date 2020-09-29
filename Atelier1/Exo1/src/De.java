@@ -82,7 +82,7 @@ public class De {
           int resultatDe;
 
           for(int i=0; i<nbLances ; i++){
-               resultatDe = r.nextInt(this.nbFaces)+1;
+               resultatDe = lancer();
 
                if(resultatDe > resultatPrecedent){
                     resultatMax = resultatDe;
