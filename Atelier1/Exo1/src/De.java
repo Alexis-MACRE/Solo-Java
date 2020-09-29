@@ -65,16 +65,8 @@ public class De {
           return this.nom;
      }
 
-     public Boolean equals(De deCompare){
-          String nomCompare = deCompare.nom;
-          int nbFacesCompare = deCompare.getNbFaces();
-          
-          if(nomCompare.equals(this.nom) && nbFacesCompare == this.nbFaces){
-               return true;
-          }
-          else{
-               return false;
-          }
+     public boolean equals(Object obj){
+          return(obj instanceof De && this.nom.equals(((De)obj).nom) && this.nbFaces == ((De)obj).getNbFaces());
      }
      
      public int lancer(){
