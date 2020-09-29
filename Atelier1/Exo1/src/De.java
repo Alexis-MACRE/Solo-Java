@@ -20,12 +20,7 @@ public class De {
      public De(int nbFaces, String nom){
           nb_des++;
 
-          if(nbFaces>=NB_FACES_MIN && nbFaces<=NB_FACES_MAX){
-               this.nbFaces = nbFaces;
-          }
-          else{
-               System.err.println("Valeurs entrées incorrectes");
-          }
+          setNbFaces(nbFaces);
 
           if(nom=="")
           {
@@ -55,7 +50,7 @@ public class De {
      }
 
      public void setNbFaces(int nbFaces) {
-         if(nbFaces>=3 && nbFaces <= 120){
+         if(nbFaces>=NB_FACES_MIN && nbFaces <= NB_FACES_MAX){
              this.nbFaces = nbFaces;
           }
          else{
