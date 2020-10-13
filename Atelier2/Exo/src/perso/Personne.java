@@ -143,7 +143,11 @@ public class Personne{
 	 */
 	@Override
 	public boolean equals(Object obj) {
-		return(obj!=null && obj instanceof Personne && this.nom.equals(((Personne)obj).getNom()) && this.prenom.equals(((Personne)obj).getPrenom()) && this.dateNaissance.compareTo(((Personne)obj).getDateNaissance())==0);
+		return(obj!=null && 
+			obj instanceof Personne &&
+			this.nom.equals(((Personne)obj).getNom()) &&
+			this.prenom.equals(((Personne)obj).getPrenom()) &&
+			this.dateNaissance.compareTo(((Personne)obj).getDateNaissance())==0);
 	}
 }
 
